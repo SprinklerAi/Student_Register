@@ -9,7 +9,6 @@ public class UserStorage {
 
 
     private UserStorage() {
-
     }
     public static UserStorage getInstance() {
         if (userStorage == null) {

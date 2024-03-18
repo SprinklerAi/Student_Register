@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class AddUserActivity extends AppCompatActivity {
         editLastName = findViewById(R.id.editLastName);
         editEmail = findViewById(R.id.editEmail);
         radioDegreeProgram = findViewById(R.id.radioDegreePropgram);
+
     }
 
     public void addUser(View view) {
@@ -41,6 +43,7 @@ public class AddUserActivity extends AppCompatActivity {
 
         User user = new User(firstName, lastName, email, degreeProgram);
         UserStorage.getInstance().addUser(user);
+
     }
 
     public String selectedRadio() {

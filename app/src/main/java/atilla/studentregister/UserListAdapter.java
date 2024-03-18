@@ -13,9 +13,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
     private ArrayList<User> users = new ArrayList<>();
     private Context context;
 
-    public  UserListAdapter(Context applicationContext, ArrayList<User> users) {
-        this.context = context;
+    public  UserListAdapter(Context context, ArrayList<User> users) {
         this.users = users;
+        this.context = context;
     }
 
     @NonNull
