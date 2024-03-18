@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
-    private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<User> users;
     private Context context;
 
     public  UserListAdapter(Context context, ArrayList<User> users) {
