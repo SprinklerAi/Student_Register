@@ -1,6 +1,5 @@
 package atilla.studentregister;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,7 +15,7 @@ public class AddUserActivity extends AppCompatActivity {
     private EditText editFirstName;
     private EditText editLastName;
     private EditText editEmail;
-    private String degreeProgram;
+    private RadioGroup radioDegreeProgram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +27,25 @@ public class AddUserActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        editFirstName = findViewById(R.id.editFirstName);
+        editLastName = findViewById(R.id.editLastName);
+        editEmail = findViewById(R.id.editEmail);
+        radioDegreeProgram = findViewById(R.id.radioDegreePropgram);
     }
 
+    public void addUser(View view) {
+        String firstName = editFirstName.getText().toString();
+        String lastName = editLastName.getText().toString();
+        String email = editEmail.getText().toString();
+        String degreeProgram = selectedRadio();
 
-    public void addUser(User user) {
+        User user = new User(firstName, lastName, email, degreeProgram);
+        UserStorage.getInstance().addUser(user);
+    }
 
-        editFirstName.setText(user.getFirstName());
-        editFirstName.setText(user.getLastName());
-        editEmail.setText(user.getEmail());
+    public String selectedRadio() {
 
-        RadioGroup radioDegreeProgram = findViewById(R.id.radioDegreePropgram);
+        String degreeProgram = "";
 
         if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.seRadioButton) {
             degreeProgram = "Software Engineering";
@@ -48,6 +56,6 @@ public class AddUserActivity extends AppCompatActivity {
         } else if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.eeRadioButton) {
             degreeProgram = "Industrial Engineering";
         }
-        String degreeProgram = user.setDegreeProgram();
+        return degreeProgram;
     }
 }

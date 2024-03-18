@@ -23,4 +23,7 @@ public class UserStorage {
     }
 
 
+    public void addUser(User user) {
+        users.add(user);
+    }
 }
