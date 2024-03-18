@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ListUserInRecycleViewActivity extends AppCompatActivity {
 
     private UserStorage userStorage;
-    private RecyclerView recyclerView;
+    private RecyclerView rvUserView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,11 @@ public class ListUserInRecycleViewActivity extends AppCompatActivity {
 
         userStorage = UserStorage.getInstance();
 
-        recyclerView = findViewById(R.id.rvUserView);
+        rvUserView = findViewById(R.id.rvUserView);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        rvUserView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(),userStorage.getUsers()));
+        rvUserView.setAdapter(new UserListAdapter(getApplicationContext(),userStorage.getUsers()));
 
     }
 

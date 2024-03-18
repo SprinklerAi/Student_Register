@@ -53,11 +53,11 @@ public class AddUserActivity extends AppCompatActivity {
         if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.seRadioButton) {
             degreeProgram = "Software Engineering";
         } else if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.imRadioButton) {
-            degreeProgram = "Computational Engineering";
-        } else if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.ceRadioButton) {
-            degreeProgram = "Electrical Engineering";
-        } else if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.eeRadioButton) {
             degreeProgram = "Industrial Engineering";
+        } else if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.ceRadioButton) {
+            degreeProgram = "Computational Engineering";
+        } else if (radioDegreeProgram.getCheckedRadioButtonId() == R.id.eeRadioButton) {
+            degreeProgram = "Electrical Engineering";
         }
         return degreeProgram;
     }
