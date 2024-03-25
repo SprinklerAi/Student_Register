@@ -43,6 +43,8 @@ public class AddUserActivity extends AppCompatActivity {
         User user = new User(firstName, lastName, email, degreeProgram);
         UserStorage.getInstance().addUser(user);
 
+        UserStorage.getInstance().saveUsers(this);
+
     }
 
     public String selectedRadio() {
