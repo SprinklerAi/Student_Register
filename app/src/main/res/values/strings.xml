@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Student Register</string>
+    <string name="app_name">StudentReg</string>
     <string name="title_activity_lis_user">LisUserActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

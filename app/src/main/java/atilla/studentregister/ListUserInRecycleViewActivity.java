@@ -37,6 +37,7 @@ public class ListUserInRecycleViewActivity extends AppCompatActivity {
 
         rvUserView.setLayoutManager(new LinearLayoutManager(this));
 
+
         userStorage.getUsers().sort(new Comparator<User>() {
             @Override
             public int compare(User user1, User user2) {

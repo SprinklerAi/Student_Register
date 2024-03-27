@@ -16,11 +16,6 @@
             android:name=".ListUserInRecycleViewActivity"
             android:exported="false" />
         <activity
-            android:name=".LisUserActivity"
-            android:exported="false"
-            android:label="@string/title_activity_lis_user"
-            android:theme="@style/Theme.StudentRegister.NoActionBar" />
-        <activity
             android:name=".AddUserActivity"
             android:exported="false" />
         <activity

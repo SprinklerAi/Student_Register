@@ -1,5 +1,6 @@
 package atilla.studentregister;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,12 +17,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        UserStorage.getInstance().loadUsers(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        UserStorage.getInstance().loadUsers(getApplicationContext());
+
+
     }
 
     public void openAddUserActivity(View view) {
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListUserInRecycleViewActivity.class);
         startActivity(intent);
     }
+
+
 
 
 
